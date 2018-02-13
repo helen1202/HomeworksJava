@@ -36,6 +36,7 @@ public class Assignment_3_1 {
         return newString;
     }
 
+    //можно было воспользоваться методом String - split(" ");
     public static String turnAllFirstLettersToUpperCase(String input) {
         String newString = "";
         newString = newString + input.substring(0, 1).toUpperCase();
@@ -48,6 +49,7 @@ public class Assignment_3_1 {
         return newString;
     }
 
+    //можно было воспользоваться методом String - split(" ");
     public static String turnAllFirstLettersToLowerCase(String input) {
         String upperCaseString = input.toUpperCase();
         String newString = "";
