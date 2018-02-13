@@ -28,6 +28,8 @@ public class Assignment_2_2 {
         long inputNumber;
         while (true) {
             if (sc.hasNextLong()) {
+                //тут ошибки, так как приходится два раза вводить число 
+                //происходит потому что подряд идет вызов nextLong()              
                 if (sc.nextLong() > 0){
                     inputNumber = sc.nextLong();
                     break;
