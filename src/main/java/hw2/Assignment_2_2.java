@@ -23,23 +23,20 @@ public class Assignment_2_2 {
     }
 
     public static void main(String[] args) {
-        System.out.print("Enter positive and non-fractional number: ");
         Scanner sc = new Scanner(System.in);
         long inputNumber;
-        while (true) {
-            if (sc.hasNextLong()) {
-                //тут ошибки, так как приходится два раза вводить число 
-                //происходит потому что подряд идет вызов nextLong()              
-                if (sc.nextLong() > 0){
-                    inputNumber = sc.nextLong();
-                    break;
-                }
-            }
-            else {
-                System.out.println("You`ve entered a wrong number!\nPlease try again:");
+        do {
+            System.out.println("Enter positive and non-fractional number: ");
+            while (!sc.hasNextLong()) {
+                System.out.println("Incorrect input. Please, try again!");
                 sc.next();
             }
+            inputNumber = sc.nextLong();
+            if (inputNumber > 0) {
+                getMinAndMaxDigitsInNumber(inputNumber);
+            }
         }
-        getMinAndMaxDigitsInNumber(inputNumber);
+        while (inputNumber <= 0);
     }
 }
+
