@@ -61,35 +61,6 @@ public class PasswordGenerator {
         int index = random.nextInt(alphabet.length());
         return alphabet.charAt(index);
     }
-//while(true)random вызвать и сделать его 1 раз
-// case 1, 2, 3
-
-    //case 1
-    //random from 1/2/3
-    //ветка 1 символы if at least 1, characters (tr/false)
-    //add ti string buffer
-
-    //ветка цифр calc numers (if == 3) continue;
-    // ветка букв - проверяем не равен ли предыдущий символ текущему
-   /* Scanner sc = new Scanner(System.in);
-
-        while(true)
-
-    {
-        System.out.println("Please enter password legth (from 8 to 20 characters): ");
-        if (sc.hasNextInt()) {
-            int passLength = sc.nextInt();
-            if ((passLength >= MIN_LENGTH) && (passLength <= MAX_LENGTH)) {
-                System.out.println(passLength);
-                break;
-            }
-        } else {
-            sc.next();
-        }
-    }
-
-*/
-
 }
 
 

@@ -11,9 +11,6 @@ public class Assignment_3_3 {
             "+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$";
     private static final String errorMessage = "Incorrect input!";
     private static final String validMessage = "Correct input.";
-    private static final String messageForTypeFio = "Please, type your full name: ";
-    private static final String messageForTypePhone = "Please, type your phone number: ";
-    private static final String messageForTypeEmail = "Please, type your email: ";
 
     public static void checkUsersInput(String s, String pattern) {
         if (s.matches(pattern)) {
@@ -24,20 +21,12 @@ public class Assignment_3_3 {
     }
 
     public static void main(String[] args) {
-        String[] mas = {patternForFio, patternForPhoneNumber, patternForEmail};
-        String[] messages = {messageForTypeFio, messageForTypePhone, messageForTypeEmail};
-        System.out.println("Please, type your full name: ");
-        System.out.println("Please, type your phone number: ");
-        System.out.println("Please, type your email: ");
         Scanner sc = new Scanner(System.in);
-        outer:
-        for (String str : messages) {
-            System.out.println(str);
-            inner:
-            for (String s : mas) {
-                checkUsersInput(sc.nextLine(), s);
-                continue outer;
-            }
+        System.out.println("Please, type your full name: ");
+        checkUsersInput(sc.nextLine(), patternForFio);
+        System.out.println("Please, type your phone number: ");
+        checkUsersInput(sc.nextLine(),patternForPhoneNumber);
+        System.out.println("Please, type your email: ");
+        checkUsersInput(sc.nextLine(),patternForEmail);
         }
     }
-}
