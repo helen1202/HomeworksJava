@@ -2,8 +2,8 @@ package hw4.shapes;
 
 public abstract class AbstractShape {
 
-        public abstract int calculateSquareOfShape();
-        public abstract int calculatePerimeterOfShape();
+        public abstract double calculateSquareOfShape();
+        public abstract double calculatePerimeterOfShape();
 
 
     }

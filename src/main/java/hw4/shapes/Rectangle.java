@@ -2,11 +2,12 @@ package hw4.shapes;
 
 public class Rectangle extends AbstractShape{
 
-    public int calculateSquareOfShape() {
+
+    public double calculateSquareOfShape() {
         return 0;
     }
 
-    public int calculatePerimeterOfShape() {
+    public double calculatePerimeterOfShape() {
         return 0;
     }
 }

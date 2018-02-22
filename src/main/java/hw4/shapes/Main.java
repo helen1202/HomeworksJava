@@ -2,7 +2,9 @@ package hw4.shapes;
 
 import java.util.Scanner;
 
-public class InteractionWithUser {
+public class Main {
+   // getShape()
+
     private static final String MENU = "Выберите фигуру:\n" +
             "1. Квадрат\n" +
             "2. Прямоугольник\n" +
@@ -20,9 +22,9 @@ public class InteractionWithUser {
         System.out.println(MENU);
         if (userInput.hasNextInt()) {
             int value = userInput.nextInt();
-            //p = new AbstarctShapeFactory
+            //p = new ShapeFactory
             //switch по p
-           // case 1 - return new Circle()
+            // case 1 - return new Circle()
             switch (value) {
                 case 1:
                     System.out.println(squareMessage);
