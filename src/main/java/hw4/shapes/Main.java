@@ -1,62 +1,45 @@
 package hw4.shapes;
 
+import hw4.shapes.model.*;
+
 import java.util.Scanner;
 
 public class Main {
-   // getShape()
-
+    private static final Scanner userInput = new Scanner(System.in);
     private static final String MENU = "Выберите фигуру:\n" +
             "1. Квадрат\n" +
             "2. Прямоугольник\n" +
             "3. Круг \n" +
             "4. Треугольник\n" +
             "5. Выход\n";
-    private static final String squareMessage = "Вы выбрали квадрат.";
-    private static final String circleMessage = "Вы выбрали круг.";
-    private static final String rectangleMessage = "Вы выбрали прямоугольник.";
-    private static final String triangleMessage = "Вы выбрали треугольник.";
-    private static final String exitMessage = "Выход";
+
+    private static AbstractShape getShape(int value) {
+        switch (value) {
+            case 1:
+                return new Square();
+            case 2:
+                return new Rectangle();
+            case 3:
+                return new Circle();
+            case 4:
+                return new Triangle();
+            case 5:
+            default:
+                System.out.println("Выход из программы...");
+                System.exit(0);
+
+        }
+        return null;
+    }
 
     public static void main(String[] args) {
-        Scanner userInput = new Scanner(System.in);
         System.out.println(MENU);
-        if (userInput.hasNextInt()) {
-            int value = userInput.nextInt();
-            //p = new ShapeFactory
-            //switch по p
-            // case 1 - return new Circle()
-            switch (value) {
-                case 1:
-                    System.out.println(squareMessage);
-                    System.out.println("Введите сторону квадрата: ");
-                    int squareSide = userInput.nextInt();
-                    break;
-                case 2:
-                    System.out.println(rectangleMessage);
-                    System.out.println("Введите длину прямоугольника: ");
-                    int rectangleSide1 = userInput.nextInt();
-                    System.out.println("Введите ширину прямоугольника: ");
-                    int rectangleSide2 = userInput.nextInt();
-                    break;
-                case 3:
-                    System.out.println(circleMessage);
-                    System.out.println("Введите радиус круга: ");
-                    int radius = userInput.nextInt();
-                    break;
-                case 4:
-                    System.out.println(triangleMessage);
-                    System.out.println("Введите сторону А треугольника: ");
-                    int triangleSideA = userInput.nextInt();
-                    System.out.println("Введите сторону В треугольника: ");
-                    int triangleSideB = userInput.nextInt();
-                    System.out.println("Введите сторону С треугольника: ");
-                    int triangleSideC = userInput.nextInt();
-                    break;
-                case 5:
-                    System.out.println(exitMessage);
-                    break;
-            }
-        }
-
+        int value = userInput.nextInt();
+        AbstractShape shape = getShape(value);
+        System.out.println(shape.toString());
     }
 }
+
+
+
+
