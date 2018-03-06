@@ -20,6 +20,10 @@ public class Rectangle extends AbstractShape {
         return perimeterFormula;
     }
 
+    /**
+    Вот это вот все должно быть в конкретной реализации абстрактного класса 
+    ShapeFactory 
+    **/
     public void createShape() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Вы выбрали прямоугольник.");

@@ -14,14 +14,24 @@ public class Main {
             "5. Выход\n";
 
     private static AbstractShape getShape(int value) {
+        //тут нужно создать конкретную ShapeFactory 
+        //ShapeFactory shapeFactory;
         switch (value) {
             case 1:
+                //shapeFactory = new SquareFactory();
+                //break;
                 return new Square();
             case 2:
+                //shapeFactory = new RectangleFactory();
+                //break;
                 return new Rectangle();
             case 3:
+                //shapeFactory = new SquareFactory();
+                //break;
                 return new Circle();
             case 4:
+                //shapeFactory = new TriangleFactory();
+                //break;
                 return new Triangle();
             case 5:
             default:
@@ -29,11 +39,15 @@ public class Main {
                 System.exit(0);
 
         }
+        //вот тут вернуть фигуру
+        //return shapeFactory.getShape();
         return null;
     }
 
     public static void main(String[] args) {
         System.out.println(MENU);
+        //А если я введу букву, то программа вылетит по эксепшену, не хорошо 
+        //Вы же как тестеры знаете, что пользователь обязательно введет что то не то :)
         int value = userInput.nextInt();
         AbstractShape shape = getShape(value);
         System.out.println(shape.toString());
