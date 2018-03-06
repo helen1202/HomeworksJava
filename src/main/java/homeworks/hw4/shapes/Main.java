@@ -34,6 +34,8 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println(MENU);
+        //А если я введу букву, то программа вылетит по эксепшену, не хорошо 
+        //Вы же как тестеры знаете, что пользователь обязательно введет что то не то :)
         int value = userInput.nextInt();
         AbstractShape shape = getShape(value);
         System.out.println(shape.toString());
