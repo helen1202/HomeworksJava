@@ -3,6 +3,8 @@ package homeworks.hw5.calculator;
 import java.util.Scanner;
 
 public class Calculator {
+    private Scanner sc = new Scanner(System.in);
+
     public double calculate(double val1, double val2, String operator) {
         BinaryOperation operation = getOperationFor(operator);
 
@@ -18,7 +20,7 @@ public class Calculator {
         if ("*".equals(operator)) {
             return new Multiplication();
         } else if ("-".equals(operator)) {
-            return new Substraction();
+            return new Subtraction();
         } else if ("+".equals(operator)) {
             return new Addition();
         } else if ("/".equals(operator)) {
@@ -33,16 +35,5 @@ public class Calculator {
         return null;
     }
 
-    public static void main(String[] args) {
-        System.out.println("Введите выражение, которое необходимо вычислить, по типу " +
-                "\"X operator Y\": ");
-        Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
-        ExpressionParser parser = new ExpressionParser();
-        parser.checkUserInput(input);
-        Calculator calculator = new Calculator();
 
-
-
-    }
 }
