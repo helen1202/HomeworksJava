@@ -1,40 +1,33 @@
 package homeworks.hw7;
-import java.io.BufferedReader;
-import java.io.FileReader;
+
 import java.io.IOException;
-import java.io.LineNumberReader;
+import java.nio.file.AccessDeniedException;
+
 
 
 public class Program {
     public static void main(String[] args) {
-     // Grep gr = new Grep();
-     // gr.grep(Pattern.compile("find me"),"file.txt");
+
+        String filePath;
+        String stringToFind;
         if(args.length == 2)
         {
+           filePath = args[1];
+           stringToFind = args[0];
+
             System.out.println("Find word: " +
                     args[0] + " in file: " + args[1]);
 
             try
             {
-                LineNumberReader reader =
-                        new LineNumberReader(
-                                new BufferedReader(
-                                        new FileReader(args[1])));
+               Grep grep = new Grep();
+               grep.grep(stringToFind,filePath);
 
-                String s;
-                while(true)
-                {
-                    s = reader.readLine();
-                    if(s == null)
-                        break;
-
-                    if(s.indexOf(args[0]) != -1)
-                    {
-                        System.out.println("<<< " +
-                                reader.getLineNumber() + " >>>" + s);
-                    }
-                }
-                reader.close();
+            }
+            catch (AccessDeniedException e)
+            {
+                System.out.println(e.toString());
+                System.exit(0);
             }
             catch (IOException ex)
             {
@@ -43,7 +36,7 @@ public class Program {
             }
         }
         else
-            System.out.println("Args: word file");
+            System.out.println("Incorrect input!\n First argument must be word to find and second one - file path.");
     }
 }
 
