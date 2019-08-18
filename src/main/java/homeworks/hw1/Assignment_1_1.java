@@ -2,6 +2,7 @@ package homeworks.hw1;
 
 public class Assignment_1_1 {
 
+    //
     public static void expressionLong(long x, long y, long z, long n) {
         long longResult = x + (y - 100) * z / n;
         System.out.printf("Long expression:%nx+(y - 100)*z/n = %d%n", longResult);
