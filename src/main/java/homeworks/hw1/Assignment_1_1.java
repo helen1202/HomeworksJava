@@ -6,8 +6,7 @@ public class Assignment_1_1 {
         long longResult = x + (y - 100) * z / n;
         System.out.printf("Long expression:%nx+(y - 100)*z/n = %d%n", longResult);
     }
-
-    // test
+    
     public static void expressionInt(int x, int y, int z, int n) {
         int intResult = (x - (50 + y * z) * n) + x;
         System.out.printf("Int expression:%n(x-(50+y *z)*n)+x = %d%n", intResult);
